@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons Example</title>
+    <style>
+      .btn-blue {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn-red {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-blue" onclick="fetchTodos()">Blue Button</button>
+    <button class="btn-red">Red Button</button>
+
+    <table className="table mt-5 text-center">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+    </table>
+
+    <script>
+      //    function fetchTodos() {
+      //     fetch("http://localhost:5000/todos")
+      //       .then((response) => response.json())
+      //       .then((data) => console.log(data))
+      //       .catch((error) => console.error("Error fetching todos:", error));
+      //   }
+      const callback = () => {
+        console.log("Callback function called");
+      };
+      const callback2 = () => {
+        console.log("Callback2 function called");
+      };
+
+      const e = (cb) => {
+        setTimeout(() => {
+          console.log("primo log");
+          cb();
+        }, 2000);
+      };
+
+      const fetchTodos = () => {
+        e(callback2);
+      };
+      const fetchTodos1 = () => {
+        e(callback);
+      };
+    </script>
+  </body>
+</html>
